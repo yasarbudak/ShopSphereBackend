@@ -10,4 +10,10 @@
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj" />
+    <ProjectReference Include="..\..\External\ShopSphere.UserService.Infrastructure\ShopSphere.UserService.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\External\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj" />
+  </ItemGroup>
+
 </Project>
