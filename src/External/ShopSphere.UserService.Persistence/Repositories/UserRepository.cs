@@ -1,4 +1,5 @@
-﻿using ShopSphere.UserService.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ShopSphere.UserService.Domain.Entities;
 using ShopSphere.UserService.Domain.Interfaces;
 using ShopSphere.UserService.Persistence.DbContexts;
 using System;
@@ -18,24 +19,49 @@ namespace ShopSphere.UserService.Persistence.Repositories
       _context = context;
     }
 
-    public Task<bool> AddAsync(User user)
+    public async Task<User> GetUserByIdAsync(Guid userId)
     {
-      throw new NotImplementedException();
+      return await _context.Users.FindAsync(userId);
     }
 
-    public Task<bool> DeleteAsync(Guid userId)
+    public async Task<List<User>> GetAllUsersAsync()
     {
-      throw new NotImplementedException();
+      return await _context.Users.ToListAsync();
     }
 
-    public Task<User> GetUserByIdAsync(Guid userId)
+    public async Task<bool> AddUserAsync(User user)
     {
-      throw new NotImplementedException();
+      await _context.Users.AddAsync(user);
+      var result = await _context.SaveChangesAsync();
+      return result > 0; // If SaveChangesAsync returns > 0, it means changes were successfully saved
     }
 
-    public Task<bool> UpdateAsync(User user)
+    public async Task<bool> UpdateUserAsync(User user)
     {
-      throw new NotImplementedException();
+      _context.Users.Update(user);
+      var result =  await _context.SaveChangesAsync();
+      return result > 0;
+    }
+
+    public async Task<bool> DeleteUserAsync(Guid userId)
+    {
+      try
+      {
+        var user = await _context.Users.FindAsync(userId);
+        if (user == null)
+        {
+          return false; // Return false if user is not found
+        }
+
+        _context.Users.Remove(user);
+        await _context.SaveChangesAsync();
+
+        return true; // Return true if deletion is successful
+      }
+      catch
+      {
+        return false; // Return false if an exception occurs
+      }
     }
   }
 }

@@ -10,8 +10,9 @@ namespace ShopSphere.UserService.Domain.Interfaces
   public interface IUserRepository
   {
     Task<User> GetUserByIdAsync(Guid userId);
-    Task<bool> AddAsync(User user);
-    Task<bool> UpdateAsync(User user);
-    Task<bool> DeleteAsync(Guid userId);
+    Task<List<User>> GetAllUsersAsync();
+    Task<bool> AddUserAsync(User user);
+    Task<bool> UpdateUserAsync(User user);
+    Task<bool> DeleteUserAsync(Guid userId);
   }
 }

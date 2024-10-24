@@ -1,5 +1,6 @@
 ﻿using ShopSphere.UserService.Application.DTOs;
 using ShopSphere.UserService.Application.Interfaces;
+using ShopSphere.UserService.Domain.Entities;
 using ShopSphere.UserService.Domain.Interfaces;
 
 namespace ShopSphere.UserService.Application.Services
@@ -12,24 +13,55 @@ namespace ShopSphere.UserService.Application.Services
       _userRepository = userRepository;
     }
 
-    public Task<bool> CreateUserAsync(CreateUserDto user)
+    public async Task<bool> AddUserAsync(UserDto user)
     {
-      throw new NotImplementedException();
+      var userEntity = new User
+      {
+        Id = Guid.NewGuid(),
+        Name = user.Name,
+        Email = user.Email
+      };
+      return await _userRepository.AddUserAsync(userEntity);
     }
 
-    public Task<bool> DeleteUserAsync(Guid userId)
+    public async Task<bool> UpdateUserAsync(UserDto user)
     {
-      throw new NotImplementedException();
+      var userEntity = new User
+      {
+        Id = user.Id,
+        Name = user.Name,
+        Email = user.Email
+      };
+      return await _userRepository.UpdateUserAsync(userEntity);
     }
 
-    public Task<UserDto> GetUserByIdAsync(Guid userId)
+    public async Task<bool> DeleteUserAsync(Guid userId)
     {
-      throw new NotImplementedException();
+      return await _userRepository.DeleteUserAsync(userId);
     }
 
-    public Task<bool> UpdateUserAsync(UpdateUserDto user)
+    public async Task<UserDto> GetUserByIdAsync(Guid userId)
     {
-      throw new NotImplementedException();
+      var user = await _userRepository.GetUserByIdAsync(userId);
+      if (user == null) return null;
+
+      return new UserDto
+      {
+        Id = user.Id,
+        Name = user.Name,
+        Email = user.Email
+      };
+    }
+
+    public async Task<IEnumerable<UserDto>> GetAllUsersAsync()
+    {
+      var users = await _userRepository.GetAllUsersAsync();
+      return users.Select(user => new UserDto
+      {
+        Id = user.Id,
+        Name = user.Name,
+        Email = user.Email
+      });
     }
   }
 }

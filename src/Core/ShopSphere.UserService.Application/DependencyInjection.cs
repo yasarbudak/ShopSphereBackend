@@ -8,8 +8,7 @@ namespace ShopSphere.UserService.Application
   {
     public static IServiceCollection AddApplicationServices(this IServiceCollection services)
     {
-      //Register application-specific services
-      services.AddScoped<IUserService, UserServiceImplementation>();
+      services.AddTransient<IUserService, UserServiceImplementation>();
       return services;
     }
   }

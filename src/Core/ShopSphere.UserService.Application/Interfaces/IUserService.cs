@@ -9,9 +9,10 @@ namespace ShopSphere.UserService.Application.Interfaces
 {
   public interface IUserService
   {
-    Task<UserDto> GetUserByIdAsync(Guid userId);
-    Task<bool> CreateUserAsync(CreateUserDto user);
-    Task<bool> UpdateUserAsync(UpdateUserDto user);
+    Task<bool> AddUserAsync(UserDto user);
+    Task<bool> UpdateUserAsync(UserDto user);
     Task<bool> DeleteUserAsync(Guid userId);
+    Task<UserDto> GetUserByIdAsync(Guid userId);
+    Task<IEnumerable<UserDto>> GetAllUsersAsync();
   }
 }

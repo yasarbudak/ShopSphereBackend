@@ -13,19 +13,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External", "External", "{AF
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{C9A5FE07-A8E5-4660-9FBF-9B3B4F3EDDCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.UserService.Application", "src\Core\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj", "{911FA39D-013A-4B42-94D4-6B034CC51F8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.Application", "src\Core\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj", "{911FA39D-013A-4B42-94D4-6B034CC51F8C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.UserService.Domain", "src\Core\ShopSphere.UserService.Domain\ShopSphere.UserService.Domain.csproj", "{87C0F0B3-204F-4207-B22F-98C379A10E8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.Domain", "src\Core\ShopSphere.UserService.Domain\ShopSphere.UserService.Domain.csproj", "{87C0F0B3-204F-4207-B22F-98C379A10E8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Common", "src\Core\ShopSphere.Common\ShopSphere.Common.csproj", "{012E3BF8-4F0F-4829-9CD0-0E266D565599}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.Common", "src\Core\ShopSphere.Common\ShopSphere.Common.csproj", "{012E3BF8-4F0F-4829-9CD0-0E266D565599}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.UserService.Infrastructure", "src\External\ShopSphere.UserService.Infrastructure\ShopSphere.UserService.Infrastructure.csproj", "{A35BC459-7BE1-4E41-8710-5C0FAF46E400}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.Infrastructure", "src\External\ShopSphere.UserService.Infrastructure\ShopSphere.UserService.Infrastructure.csproj", "{A35BC459-7BE1-4E41-8710-5C0FAF46E400}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.UserService.Persistence", "src\External\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj", "{985033E1-FA99-477C-A2AE-69DDE9EDC015}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.Persistence", "src\External\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj", "{985033E1-FA99-477C-A2AE-69DDE9EDC015}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.UserService.API", "src\Presentation\ShopSphere.UserService.API\ShopSphere.UserService.API.csproj", "{CB4DE3F3-629C-4712-8518-AC971BBC5BF0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.API", "src\Presentation\ShopSphere.UserService.API\ShopSphere.UserService.API.csproj", "{CB4DE3F3-629C-4712-8518-AC971BBC5BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Tests", "test\ShopSphere.Tests\ShopSphere.Tests.csproj", "{8788F3A6-3345-4354-B21E-19145E8D0A98}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Tests", "test\ShopSphere.Tests\ShopSphere.Tests.csproj", "{4C46A646-A44A-434C-8B1C-439E30E8FDCC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,10 +57,10 @@ Global
 		{CB4DE3F3-629C-4712-8518-AC971BBC5BF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CB4DE3F3-629C-4712-8518-AC971BBC5BF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CB4DE3F3-629C-4712-8518-AC971BBC5BF0}.Release|Any CPU.Build.0 = Release|Any CPU
-		{8788F3A6-3345-4354-B21E-19145E8D0A98}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{8788F3A6-3345-4354-B21E-19145E8D0A98}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{8788F3A6-3345-4354-B21E-19145E8D0A98}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{8788F3A6-3345-4354-B21E-19145E8D0A98}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -75,7 +75,7 @@ Global
 		{A35BC459-7BE1-4E41-8710-5C0FAF46E400} = {AFCE284C-21E7-40DC-891C-9FCB11FA53D5}
 		{985033E1-FA99-477C-A2AE-69DDE9EDC015} = {AFCE284C-21E7-40DC-891C-9FCB11FA53D5}
 		{CB4DE3F3-629C-4712-8518-AC971BBC5BF0} = {C9A5FE07-A8E5-4660-9FBF-9B3B4F3EDDCF}
-		{8788F3A6-3345-4354-B21E-19145E8D0A98} = {7563BFAA-9248-4A07-9BB3-13B913B80080}
+		{4C46A646-A44A-434C-8B1C-439E30E8FDCC} = {7563BFAA-9248-4A07-9BB3-13B913B80080}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1FCFB922-5B23-48C4-ABB0-BB52EFCB7257}

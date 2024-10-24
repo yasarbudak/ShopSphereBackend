@@ -10,11 +10,13 @@ namespace ShopSphere.UserService.Persistence.DbContexts
 {
   public class ApplicationDbContext : DbContext
   {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : base(dbContextOptions) 
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> dbContextOptions) : base(dbContextOptions) { }
+
+    public DbSet<User> Users { get; set; }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-
+      base.OnModelCreating(modelBuilder);
     }
-
-    public DbSet<User> users { get; set; }
   }
 }
