@@ -1,4 +1,5 @@
 ﻿using ShopSphere.UserService.Application.DTOs;
+using ShopSphere.UserService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,5 +15,7 @@ namespace ShopSphere.UserService.Application.Interfaces
     Task<bool> DeleteUserAsync(Guid userId);
     Task<UserDto> GetUserByIdAsync(Guid userId);
     Task<IEnumerable<UserDto>> GetAllUsersAsync();
+    Task<UserDto> GetUserByUsernameAsync(string username);
+    Task<UserDto> GetUserByEmailAsync(string email);
   }
 }

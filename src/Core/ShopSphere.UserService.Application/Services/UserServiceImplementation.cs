@@ -17,8 +17,8 @@ namespace ShopSphere.UserService.Application.Services
     {
       var userEntity = new User
       {
-        Id = Guid.NewGuid(),
-        Name = user.Name,
+        UserId = Guid.NewGuid(),
+        Username = user.Username,
         Email = user.Email
       };
       return await _userRepository.AddUserAsync(userEntity);
@@ -28,8 +28,8 @@ namespace ShopSphere.UserService.Application.Services
     {
       var userEntity = new User
       {
-        Id = user.Id,
-        Name = user.Name,
+        UserId = user.UserId,
+        Username = user.Username,
         Email = user.Email
       };
       return await _userRepository.UpdateUserAsync(userEntity);
@@ -47,9 +47,11 @@ namespace ShopSphere.UserService.Application.Services
 
       return new UserDto
       {
-        Id = user.Id,
-        Name = user.Name,
-        Email = user.Email
+        UserId = user.UserId,
+        Username = user.Username,
+        Email = user.Email,
+        LastLogin = user.LastLogin,
+        Role = user.Role,
       };
     }
 
@@ -58,10 +60,51 @@ namespace ShopSphere.UserService.Application.Services
       var users = await _userRepository.GetAllUsersAsync();
       return users.Select(user => new UserDto
       {
-        Id = user.Id,
-        Name = user.Name,
-        Email = user.Email
+        UserId = user.UserId,
+        Username = user.Username,
+        Email = user.Email,
+        LastLogin = user.LastLogin,
+        Role = user.Role,
       });
+    }
+    public async Task<UserDto> GetUserByUsernameAsync(string username)
+    {
+      // Repository'den veriyi al
+      var user = await _userRepository.GetUserByUsernameAsync(username);
+      if (user == null)
+      {
+        return null; // Kullanıcı bulunamadı
+      }
+
+      // İş mantığını uygula ve DTO'ya dönüştür
+      return new UserDto
+      {
+        UserId = user.UserId,
+        Username = user.Username,
+        Email = user.Email,
+        Role = user.Role,
+        LastLogin = user.LastLogin
+      };
+    }
+
+    public async Task<UserDto?> GetUserByEmailAsync(string email)
+    {
+      // Repository'den veriyi al
+      var user = await _userRepository.GetUserByEmailAsync(email);
+      if (user == null)
+      {
+        return null; // Kullanıcı bulunamadı
+      }
+
+      // İş mantığını uygula ve DTO'ya dönüştür
+      return new UserDto
+      {
+        UserId = user.UserId,
+        Username = user.Username,
+        Email = user.Email,
+        Role = user.Role,
+        LastLogin = user.LastLogin
+      };
     }
   }
 }
