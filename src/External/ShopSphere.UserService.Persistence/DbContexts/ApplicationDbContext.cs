@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using BCrypt.Net;
+using Microsoft.EntityFrameworkCore;
 using ShopSphere.UserService.Domain.Entities;
+using ShopSphere.UserService.Domain.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,7 +23,34 @@ namespace ShopSphere.UserService.Persistence.DbContexts
 
       //Fluent API configuration for user entity.
       modelBuilder.Entity<User>()
-        .HasKey(u=>u.UserId); // primary Key
+        .HasKey(u => u.UserId); // primary Key
+
+      // Fluent API ile Unique Constraint ekleniyor
+      modelBuilder.Entity<User>()
+          .HasIndex(u => u.Username)
+          .IsUnique();
+
+      // Örnek kullanıcılar
+      modelBuilder.Entity<User>().HasData(
+          new User
+          {
+            UserId = Guid.NewGuid(),
+            Username = "admin",
+            Email = "admin@example.com",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("Admin123!"), // Şifreyi hashliyoruz
+            Role = Role.Admin,
+            CreatedAt = DateTime.UtcNow
+          },
+          new User
+          {
+            UserId = Guid.NewGuid(),
+            Username = "user",
+            Email = "user@example.com",
+            PasswordHash = BCrypt.Net.BCrypt.HashPassword("User123!"), // Şifreyi hashliyoruz
+            Role = Role.User,
+            CreatedAt = DateTime.UtcNow
+          }
+      );
     }
   }
 }

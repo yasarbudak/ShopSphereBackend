@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShopSphere.UserService.Domain.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,7 @@ namespace ShopSphere.UserService.Domain.Entities
     public string Username { get; set; }
     public string Email { get; set; }
     public string PasswordHash { get; set; }
-    public string Role { get; set; }
+    public Role Role { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? LastLogin { get; set; }
   }

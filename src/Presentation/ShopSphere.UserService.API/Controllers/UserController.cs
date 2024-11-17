@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.AspNetCore.Mvc;
 using ShopSphere.UserService.API.Services;
@@ -42,6 +43,8 @@ namespace ShopSphere.UserService.API.Controllers
       return BadRequest("User update failed.");
     }
 
+    // Admin rolüne sahip kullanıcılar için
+    [Authorize(Roles = "Admin")]
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteUser(Guid id)
     {
@@ -53,6 +56,8 @@ namespace ShopSphere.UserService.API.Controllers
       return BadRequest("User deletion failed.");
     }
 
+    // Giriş yapmış kullanıcılar tarafından kullanılabilir
+    [Authorize]
     [HttpGet("{id}")]
     public async Task<IActionResult> GetUserById(Guid id)
     {
@@ -71,6 +76,8 @@ namespace ShopSphere.UserService.API.Controllers
       return Ok(users);
     }
 
+    // Giriş yapmadan herkesin erişebileceği endpoint
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequestDto loginRequest)
     {

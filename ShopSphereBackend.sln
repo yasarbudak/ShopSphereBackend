@@ -25,7 +25,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.Pers
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.UserService.API", "src\Presentation\ShopSphere.UserService.API\ShopSphere.UserService.API.csproj", "{CB4DE3F3-629C-4712-8518-AC971BBC5BF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.Tests", "test\ShopSphere.Tests\ShopSphere.Tests.csproj", "{4C46A646-A44A-434C-8B1C-439E30E8FDCC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShopSphere.Tests", "test\ShopSphere.Tests\ShopSphere.Tests.csproj", "{4C46A646-A44A-434C-8B1C-439E30E8FDCC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateway", "Gateway", "{7814228A-6A14-4406-987B-0137FAE3D5A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShopSphere.ApiGateway", "src\Gateways\ShopSphere.ApiGateway\ShopSphere.ApiGateway.csproj", "{F0371082-32FB-4B4D-886C-EFC4541F5449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +65,10 @@ Global
 		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C46A646-A44A-434C-8B1C-439E30E8FDCC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0371082-32FB-4B4D-886C-EFC4541F5449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0371082-32FB-4B4D-886C-EFC4541F5449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0371082-32FB-4B4D-886C-EFC4541F5449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0371082-32FB-4B4D-886C-EFC4541F5449}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -76,6 +84,8 @@ Global
 		{985033E1-FA99-477C-A2AE-69DDE9EDC015} = {AFCE284C-21E7-40DC-891C-9FCB11FA53D5}
 		{CB4DE3F3-629C-4712-8518-AC971BBC5BF0} = {C9A5FE07-A8E5-4660-9FBF-9B3B4F3EDDCF}
 		{4C46A646-A44A-434C-8B1C-439E30E8FDCC} = {7563BFAA-9248-4A07-9BB3-13B913B80080}
+		{7814228A-6A14-4406-987B-0137FAE3D5A2} = {F373D974-25F1-47FD-A381-311E95D1E22A}
+		{F0371082-32FB-4B4D-886C-EFC4541F5449} = {7814228A-6A14-4406-987B-0137FAE3D5A2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1FCFB922-5B23-48C4-ABB0-BB52EFCB7257}

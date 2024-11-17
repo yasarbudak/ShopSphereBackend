@@ -39,7 +39,7 @@ namespace ShopSphere.UserService.Persistence.Repositories
     public async Task<bool> UpdateUserAsync(User user)
     {
       _context.Users.Update(user);
-      var result =  await _context.SaveChangesAsync();
+      var result = await _context.SaveChangesAsync();
       return result > 0;
     }
 
@@ -66,7 +66,7 @@ namespace ShopSphere.UserService.Persistence.Repositories
 
     public async Task<User?> GetUserByUsernameAsync(string username)
     {
-      return await _context.Users.FirstOrDefaultAsync(u=>u.Username == username);
+      return await _context.Users.FirstOrDefaultAsync(u => u.Username == username);
     }
 
     public async Task<User?> GetUserByEmailAsync(string email)

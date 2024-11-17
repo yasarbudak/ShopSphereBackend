@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using ShopSphere.UserService.Persistence.DbContexts;
@@ -11,9 +12,11 @@ using ShopSphere.UserService.Persistence.DbContexts;
 namespace ShopSphere.UserService.Persistence.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241117160310_AddRoleToUser")]
+    partial class AddRoleToUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -51,30 +54,7 @@ namespace ShopSphere.UserService.Persistence.Migrations
 
                     b.HasKey("UserId");
 
-                    b.HasIndex("Username")
-                        .IsUnique();
-
                     b.ToTable("Users");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = new Guid("57e3bac9-ff2d-4ff3-a9e2-330a4bd0eece"),
-                            CreatedAt = new DateTime(2024, 11, 17, 16, 12, 29, 189, DateTimeKind.Utc).AddTicks(4844),
-                            Email = "admin@example.com",
-                            PasswordHash = "$2a$11$Lwmq0x.VgRs6rf7ncBfNA.sFXWlADeSjcz4lotxuJqLgsk7dFzC0S",
-                            Role = 0,
-                            Username = "admin"
-                        },
-                        new
-                        {
-                            UserId = new Guid("f4c2c5f4-8be7-4c2f-a653-69bc46070f2b"),
-                            CreatedAt = new DateTime(2024, 11, 17, 16, 12, 29, 325, DateTimeKind.Utc).AddTicks(4473),
-                            Email = "user@example.com",
-                            PasswordHash = "$2a$11$MZncmIetucdSzXrIAko2O.0MDw1qA880Co31.NocW6nFqGaE.Luni",
-                            Role = 1,
-                            Username = "user"
-                        });
                 });
 #pragma warning restore 612, 618
         }

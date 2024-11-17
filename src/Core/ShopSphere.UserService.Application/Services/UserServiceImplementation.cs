@@ -50,8 +50,7 @@ namespace ShopSphere.UserService.Application.Services
         UserId = user.UserId,
         Username = user.Username,
         Email = user.Email,
-        LastLogin = user.LastLogin,
-        Role = user.Role,
+        LastLogin = user.LastLogin
       };
     }
 
@@ -63,8 +62,7 @@ namespace ShopSphere.UserService.Application.Services
         UserId = user.UserId,
         Username = user.Username,
         Email = user.Email,
-        LastLogin = user.LastLogin,
-        Role = user.Role,
+        LastLogin = user.LastLogin
       });
     }
     public async Task<UserDto> GetUserByUsernameAsync(string username)
@@ -82,7 +80,6 @@ namespace ShopSphere.UserService.Application.Services
         UserId = user.UserId,
         Username = user.Username,
         Email = user.Email,
-        Role = user.Role,
         LastLogin = user.LastLogin
       };
     }
@@ -102,7 +99,6 @@ namespace ShopSphere.UserService.Application.Services
         UserId = user.UserId,
         Username = user.Username,
         Email = user.Email,
-        Role = user.Role,
         LastLogin = user.LastLogin
       };
     }
