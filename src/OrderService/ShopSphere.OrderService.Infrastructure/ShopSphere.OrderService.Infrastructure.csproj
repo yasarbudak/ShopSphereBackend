@@ -4,12 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<EnablePackageDowngradeCheck>true</EnablePackageDowngradeCheck>
-    <RollForward>LatestPatch</RollForward>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Text.Json" Version="8.0.0" />
-  </ItemGroup>
 
 </Project>

@@ -4,11 +4,14 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
+	<EnablePackageDowngradeCheck>true</EnablePackageDowngradeCheck>
+    <RollForward>LatestPatch</RollForward>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Ocelot" Version="23.3.6" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="System.Text.Json" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
