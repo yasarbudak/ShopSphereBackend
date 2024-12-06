@@ -7,11 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.10" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.10">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Controllers\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ShopSphere.OrderService.Application\ShopSphere.OrderService.Application.csproj" />
+    <ProjectReference Include="..\ShopSphere.OrderService.Infrastructure\ShopSphere.OrderService.Infrastructure.csproj" />
+    <ProjectReference Include="..\ShopSphere.OrderService.Persistence\ShopSphere.OrderService.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

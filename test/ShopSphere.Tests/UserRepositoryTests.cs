@@ -1,11 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ShopSphere.UserService.Persistence.DbContexts;
-using ShopSphere.UserService.Persistence.Repositories;
-using ShopSphere.UserService.Persistence.Repositories;
-using ShopSphere.UserService.Persistence.DbContexts;
-using System;
-using System.Threading.Tasks;
 using ShopSphere.UserService.Domain.Entities;
+using ShopSphere.UserService.Persistence.DbContexts;
+using ShopSphere.UserService.Persistence.Repositories;
 
 namespace ShopSphere.Tests
 {
