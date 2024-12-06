@@ -24,7 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\ShopSphere.UserService.Domain\ShopSphere.UserService.Domain.csproj" />
+    <ProjectReference Include="..\ShopSphere.UserService.Domain\ShopSphere.UserService.Domain.csproj" />
     <ProjectReference Include="..\ShopSphere.UserService.Infrastructure\ShopSphere.UserService.Infrastructure.csproj" />
   </ItemGroup>
 

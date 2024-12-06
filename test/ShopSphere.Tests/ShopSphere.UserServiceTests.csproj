@@ -25,6 +25,8 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Core\ShopSphere.UserService.Domain\ShopSphere.UserService.Domain.csproj" />
     <ProjectReference Include="..\..\src\External\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj" />
+    <ProjectReference Include="..\..\src\UserService\ShopSphere.UserService.Domain\ShopSphere.UserService.Domain.csproj" />
+    <ProjectReference Include="..\..\src\UserService\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj" />
   </ItemGroup>
 
   <ItemGroup>

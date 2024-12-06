@@ -22,9 +22,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj" />
-    <ProjectReference Include="..\..\External\ShopSphere.UserService.Infrastructure\ShopSphere.UserService.Infrastructure.csproj" />
-    <ProjectReference Include="..\..\External\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj" />
+    <ProjectReference Include="..\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj" />
+    <ProjectReference Include="..\ShopSphere.UserService.Infrastructure\ShopSphere.UserService.Infrastructure.csproj" />
+    <ProjectReference Include="..\ShopSphere.UserService.Persistence\ShopSphere.UserService.Persistence.csproj" />
   </ItemGroup>
 
 </Project>

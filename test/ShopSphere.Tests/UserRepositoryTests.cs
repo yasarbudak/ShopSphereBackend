@@ -1,11 +1,11 @@
-﻿using Xunit;
-using Moq;
-using Microsoft.EntityFrameworkCore;
-using ShopSphere.UserService.Domain.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ShopSphere.UserService.Persistence.DbContexts;
+using ShopSphere.UserService.Persistence.Repositories;
 using ShopSphere.UserService.Persistence.Repositories;
 using ShopSphere.UserService.Persistence.DbContexts;
 using System;
 using System.Threading.Tasks;
+using ShopSphere.UserService.Domain.Entities;
 
 namespace ShopSphere.Tests
 {
@@ -30,7 +30,7 @@ namespace ShopSphere.Tests
       var user = new User { UserId = Guid.NewGuid(), Username = "John Doe", Email = "john.doe@example.com" };
 
       //Act
-      var result = await _userRepository.AddUserAsync(user);
+      var result = await _userRepository.AddUserAsync(user); 
 
       //Assert
       Assert.True(result);

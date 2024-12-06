@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Core\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj" />
+    <ProjectReference Include="..\ShopSphere.UserService.Application\ShopSphere.UserService.Application.csproj" />
   </ItemGroup>
 
 </Project>
