@@ -11,7 +11,7 @@ namespace ShopSphere.UserService.Persistence
   {
     public static IServiceCollection AddPersistenceServices(this IServiceCollection services, IConfiguration configuration)
     {
-      services.AddDbContext<ApplicationDbContext>(options =>
+      services.AddDbContext<UserServiceDbContext>(options =>
           options.UseNpgsql(configuration.GetConnectionString("UserServiceConnection")));
 
       services.AddScoped<IUserRepository, UserRepository>();

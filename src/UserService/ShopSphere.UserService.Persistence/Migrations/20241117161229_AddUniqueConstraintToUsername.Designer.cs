@@ -11,7 +11,7 @@ using ShopSphere.UserService.Persistence.DbContexts;
 
 namespace ShopSphere.UserService.Persistence.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(UserServiceDbContext))]
     [Migration("20241117161229_AddUniqueConstraintToUsername")]
     partial class AddUniqueConstraintToUsername
     {

@@ -11,7 +11,7 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
+builder.Services.AddDbContext<UserServiceDbContext>(options =>
         options.UseNpgsql(builder.Configuration.GetConnectionString("UserServiceConnection")));
 
 // Add services to the container.

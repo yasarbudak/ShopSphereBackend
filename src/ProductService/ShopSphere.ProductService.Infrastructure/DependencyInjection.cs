@@ -5,13 +5,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShopSphere.OrderService.Infrastructure
+namespace ShopSphere.ProductService.Infrastructure
 {
   public static class DependencyInjection
   {
     public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
     {
-      //Register infrastructure services like logging or third-party services
+      // Şu anda eklenmesi gereken bağımlılık yok. Logging vb. işlemler eklenebilir.
       return services;
     }
   }

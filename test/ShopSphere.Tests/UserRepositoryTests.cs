@@ -8,15 +8,15 @@ namespace ShopSphere.Tests
   public class UserRepositoryTests
   {
     private readonly UserRepository _userRepository;
-    private readonly ApplicationDbContext _applicationDbContext;
+    private readonly UserServiceDbContext _UserServiceDbContext;
 
     public UserRepositoryTests()
     {
-      var options = new DbContextOptionsBuilder<ApplicationDbContext>()
+      var options = new DbContextOptionsBuilder<UserServiceDbContext>()
         .UseInMemoryDatabase(databaseName: Guid.NewGuid().ToString())
         .Options;
-      _applicationDbContext = new ApplicationDbContext(options);
-      _userRepository = new UserRepository(_applicationDbContext);
+      _UserServiceDbContext = new UserServiceDbContext(options);
+      _userRepository = new UserRepository(_UserServiceDbContext);
     }
 
     [Fact]
@@ -30,7 +30,7 @@ namespace ShopSphere.Tests
 
       //Assert
       Assert.True(result);
-      Assert.Contains(_applicationDbContext.Users, u => u.UserId == user.UserId);
+      Assert.Contains(_UserServiceDbContext.Users, u => u.UserId == user.UserId);
     }
 
     [Fact]
@@ -47,7 +47,7 @@ namespace ShopSphere.Tests
 
       //Assert
       Assert.True(result);
-      Assert.Equal("Freddie Mercury", _applicationDbContext.Users.Find(user.UserId).Username);
+      Assert.Equal("Freddie Mercury", _UserServiceDbContext.Users.Find(user.UserId).Username);
     }
 
     [Fact]
@@ -62,7 +62,7 @@ namespace ShopSphere.Tests
 
       //Assert
       Assert.True(result);
-      Assert.DoesNotContain(_applicationDbContext.Users, u => u.UserId == user.UserId);
+      Assert.DoesNotContain(_UserServiceDbContext.Users, u => u.UserId == user.UserId);
     }
   }
 }

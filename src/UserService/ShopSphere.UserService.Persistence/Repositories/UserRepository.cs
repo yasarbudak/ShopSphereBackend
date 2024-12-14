@@ -12,9 +12,9 @@ namespace ShopSphere.UserService.Persistence.Repositories
 {
   public class UserRepository : IUserRepository
   {
-    private readonly ApplicationDbContext _context;
+    private readonly UserServiceDbContext _context;
 
-    public UserRepository(ApplicationDbContext context)
+    public UserRepository(UserServiceDbContext context)
     {
       _context = context;
     }

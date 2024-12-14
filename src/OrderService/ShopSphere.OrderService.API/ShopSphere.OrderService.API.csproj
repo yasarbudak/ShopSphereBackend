@@ -16,10 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\ShopSphere.OrderService.Application\ShopSphere.OrderService.Application.csproj" />
     <ProjectReference Include="..\ShopSphere.OrderService.Infrastructure\ShopSphere.OrderService.Infrastructure.csproj" />
     <ProjectReference Include="..\ShopSphere.OrderService.Persistence\ShopSphere.OrderService.Persistence.csproj" />

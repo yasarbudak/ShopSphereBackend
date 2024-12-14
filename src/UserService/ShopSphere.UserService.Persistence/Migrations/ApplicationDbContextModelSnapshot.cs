@@ -10,7 +10,7 @@ using ShopSphere.UserService.Persistence.DbContexts;
 
 namespace ShopSphere.UserService.Persistence.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(UserServiceDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

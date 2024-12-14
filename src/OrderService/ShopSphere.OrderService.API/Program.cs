@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using ShopSphere.OrderService.Application;
+using ShopSphere.OrderService.Application.Interfaces;
+using ShopSphere.OrderService.Application.Services;
 using ShopSphere.OrderService.Infrastructure;
 using ShopSphere.OrderService.Persistence;
 using ShopSphere.OrderService.Persistence.DbContexts;
@@ -8,7 +10,7 @@ using ShopSphere.OrderService.Persistence.DbContexts;
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<OrderDbContext>(options =>
         options.UseNpgsql(builder.Configuration.GetConnectionString("OrderServiceConnection")));
-
+builder.Services.AddScoped<IOrderService, OrderServiceImplementation>();
 
 // Add services to the container.
 

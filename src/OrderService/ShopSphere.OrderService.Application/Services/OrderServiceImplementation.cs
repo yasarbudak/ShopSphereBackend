@@ -1,7 +1,6 @@
 ﻿using ShopSphere.OrderService.Application.DTOs;
 using ShopSphere.OrderService.Application.Interfaces;
 using ShopSphere.OrderService.Domain.Entities;
-using ShopSphere.OrderService.Domain.Enums;
 using ShopSphere.OrderService.Domain.Interfaces;
 
 namespace ShopSphere.OrderService.Application.Services
